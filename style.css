@@ -1,0 +1,182 @@
+body {
+  background: linear-gradient(90deg, rgb(20, 113, 220), rgb(35, 163, 218), rgb(35, 163, 218), rgb(14, 163, 174), hsl(192, 53%, 44%));
+  font-size: 1.2rem;
+  display: flex;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-position: center center;
+    animation: animacionFondo 5s infinite;
+    background-size: 500%;
+    font-family: 'Anuphan', sans-serif;
+    min-height: 100vh;
+}
+
+.input-textarea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: auto;
+  height: 60%;
+  background: scroll;
+  margin: 15px;
+  flex-direction: column;
+  font-size: xx-large;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  resize: none;
+  text-align: center;
+  box-sizing: content-box;
+
+}
+
+.output-textarea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: auto;
+  height: 100%;
+  background: scroll;
+  margin: 15px;
+  flex-direction: column;
+  font-size: xx-large;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  resize: none;
+  text-align: center;
+  box-sizing:border-box;
+  color: blue;
+  background-color: azure;
+  border-radius: 50px;
+}
+
+
+.textarea-container {
+  width: 400px;
+    height: 400px;
+    resize: none;
+    margin: 10px;
+    font-size: 23px;
+    padding: 30px;
+}
+
+.left {
+  float: left;
+  text-align: left;
+}
+
+.right {
+  float: right;
+  font-size: x-large;
+  position: relative;
+  text-align: right;
+}
+
+button {
+  flex: 5 0;
+  align-items: end;
+  background-color: rgb(243, 245, 252);
+  width: auto;
+  height: auto;
+  border-radius: 20px;
+  color: black;
+  padding: 10px 1px;
+  text-align: center;
+  font-size: x-large;
+  margin: 5px;
+  cursor: pointer;
+  paint-order: stroke;
+}
+
+button:hover {
+  background-color: rgba(9, 64, 229, 0.6);
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+button:active span {
+  animation-name: example;
+  animation-duration: 0.1s;
+}
+
+@keyframes example {
+  from {
+    color: black;
+  }
+
+  to {
+    color: red;
+  }
+}
+
+#copy-button {
+  background-color: rgb(0, 255, 85);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 78%;
+  height: auto;
+  position: absolute; top: 280px; left: 19px; z-index: 1;
+}
+
+.waring {
+  position: unset;
+  text-align: center;
+}
+
+footer {
+    position:initial;
+    text-align:center;
+  }
+
+  #output-image {
+    width: 50%;
+    height: auto;
+}
+
+.output-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#output-image {
+  margin-bottom: 100%;
+}
+.output-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+
+footer {
+  display: flex;
+  color: #fff;
+  width: 100%;
+  margin-top: auto;
+  box-shadow: -3px -15px 43px 13px rgba(0, 0, 0, 0.76);
+}
+
+footer div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  width: 90px;
+}
+.logo {
+  width: 40%;
+  justify-content: right;
+}
+footer p{
+  padding-left: 50px;
+  font-size: 25px;
+  color: rgb(8, 1, 19);
+  font-weight: lighter;
+  font-style: bold;
+}
+
