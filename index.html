@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador y desencriptador de texto</title>
+    <!-- reset para eliminar las incopatibilidades-->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<!-- la divido entre entrada y salida in and out -->
+    <img src="Logo-1.png" alt="select"  style="position: absolute; top: 5px; left: 5px; z-index: 1;">
+    <body onload="checkOutputText()">
+        <div class="textareas">
+     
+        <div class="textarea-container left">
+            <label for="input-text"></label><br>
+            <textarea id="input-text" class="input-textarea" onfocus="clearText()">Ingresa el texto que deseas encriptar o desencriptar</textarea><br>
+           
+            <div class="waring">
+                <p>&#9888; solo letras minúsculas y sin acentos</p>
+            </div>
+            <button onclick="encryptText(); checkOutputText()">Encriptar</button>
+            <button onclick="decryptText(); checkOutputText()">Desencriptar</button><br>
+        </div>
+        <div class="textarea-container right">
+
+            <label for="output-text"></label><br>
+            <textarea id="output-text" class="output-textarea" readonly> Ningún mensaje fue encontrado</textarea><br>
+            <button class="copy-button" onclick="copyText()">Copiar</button>
+            <img id="output-image" src="Muñeco.png" alt="Imagen"
+                style="position: absolute; top: 210px; left: 85px; z-index: 1;">
+            <footer>
+                <p> Jose Miguel Castrillo</p><img src="pngwing.com.png" alt="select">
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function clearText() {
+            document.getElementById('input-text').value = '';
+        }
+
+        function encryptText() {
+            var inputText = document.getElementById("input-text").value;
+            if (!isValidText(inputText)) {
+                alert("El texto solo puede contener letras minúsculas sin acentos ni caracteres especiales.");
+                return;
+            }
+            var outputText = inputText.replace(/e/g, "enter")
+                .replace(/i/g, "imes")
+                .replace(/a/g, "ai")
+                .replace(/o/g, "ober")
+                .replace(/u/g, "ufat");
+            document.getElementById("output-text").value = outputText;
+        }
+
+        function decryptText() {
+            var inputText = document.getElementById("input-text").value;
+            if (!isValidText(inputText)) {
+                alert("El texto solo puede contener letras minúsculas sin acentos ni caracteres especiales.");
+                return;
+            }
+            var outputText = inputText.replace(/enter/g, "e")
+                .replace(/imes/g, "i")
+                .replace(/ai/g, "a")
+                .replace(/ober/g, "o")
+                .replace(/ufat/g, "u");
+            document.getElementById("output-text").value = outputText;
+        }
+
+        function isValidText(text) {
+            return /^[a-zñ\s]*$/.test(text);
+        }
+
+        function copyText() {
+            var outputText = document.getElementById("output-text");
+            outputText.select();
+            document.execCommand("copy");
+        }
+
+        function checkOutputText() {
+            var outputText = document.getElementById("output-text").value;
+            if (outputText === " Ningún mensaje fue encontrado") {
+                document.querySelector(".copy-button").style.display = "none";
+                document.querySelector("#output-image").style.display = "inline-block";
+            } else {
+                document.querySelector(".copy-button").style.display = "inline-block";
+                document.querySelector("#output-image").style.display = "none";
+            }
+        }
+
+
+    </script>
+    </div>
+</body>
+
+</html>
